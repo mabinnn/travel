@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+      body {
+        background-image: url('https://t4.ftcdn.net/jpg/00/96/70/21/240_F_96702157_XZhcoeQT5Vfnkv0btUAd8h92CTrifv43.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-left: 25px;
+      }
+      #banner {
+        margin-bottom: 80px;
+      }
+      #banner h2 {
+        display: inline-block;
+      }
+      #banner a {
+        margin-left: 50px;
+      }
+      #travelinfo label, #travelinfo input, #travelinfo h1 {
+        margin-left: 25px;
+        display: block;
+      }
+      #travelinfo input {
+        margin-bottom: 7px;
+      }
+      .subm1 {
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 2px;
+      }
+    </style>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <div id='banner'>
+          <h2>Add a Trip</h2>
+          <a href="/homepage">Home</a>
+          <a href="/logout">Logout</a>
+      </div>
+      <div id='travelinfo'>
+          <form action="/addtravel" method="post">
+            {% csrf_token %}
+            <label for="">Destination</label>
+            <input type="text" name="destination" value="">
+            <label for="">Description</label>
+            <input type="text" name="description" value="">
+            <label for="">Travel Date From</label>
+            <input type="date" name="start_date" value="">
+            <label for="">Travel Date To</label>
+            <input type="date" name="end_date" value="">
+            <input class='subm1' type="submit" name="submit" value="Add Travel!">
+          </form>
+      </div>
+
+    </div>
+
+
+
+
+
+  </body>
+</html>
